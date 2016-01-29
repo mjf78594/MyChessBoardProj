@@ -1,6 +1,13 @@
 {{test}}
-<table height= 270px>
+<table height= "270px">
   <tr>
-    color_array
+    {% for key, val in color_array['key']['id'] %}
+      {% if color_array['key']['id'] == 'White' %}
+      <td bgcolor="White", width="30px", height="30px"></td>
+      {% endif %}
+      {% if color_array['key']['id'] == 'Black' %}
+      <td bgcolor="Black", width="30px", height="30px"></td>
+      {% endif %}
+    {% endfor %}
   </tr>
 </table>
