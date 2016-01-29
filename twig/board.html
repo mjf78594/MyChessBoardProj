@@ -1,13 +1,15 @@
-{{test}}
-<table height= "270px">
-  <tr>
-    {% for key, val in color_array['key']['id'] %}
-      {% if color_array['key']['id'] == 'White' %}
-      <td bgcolor="White", width="30px", height="30px"></td>
-      {% endif %}
-      {% if color_array['key']['id'] == 'Black' %}
-      <td bgcolor="Black", width="30px", height="30px"></td>
-      {% endif %}
+<table style=border: 2px; height:270px; width:270px; >
+  <tbody>
+    {% for i in color_array %}
+      <tr>
+        {% for j in i %}
+          {% if j == 0 %}
+            <td bgcolor="#FFFFFF", width="30", height="30">&nbsp</td>
+          {% else %}
+            <td bgcolor="#000000", width="30", height="30">&nbsp</td>
+          {% endif %}
+        {% endfor %}
+      </tr>
     {% endfor %}
-  </tr>
+  </tbody>
 </table>
