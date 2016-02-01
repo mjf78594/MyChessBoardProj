@@ -1,0 +1,15 @@
+<table style=border: 2px; height:270px; width:270px; >
+  <tbody>
+    {% for i in color_array %}
+      <tr>
+        {% for j in i %}
+          {% if j == 0 %}
+            <td bgcolor="#FFFFFF", width="30", height="30">&nbsp</td>
+          {% else %}
+            <td bgcolor="#000000", width="30", height="30">&nbsp</td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
