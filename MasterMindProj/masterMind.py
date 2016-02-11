@@ -18,9 +18,11 @@ def main():
     turns = 1;
     while actual != getGuess:
         cows_Arr = [0, 0, 0, 0];
-        cows = checkCows(actual_Array, guess_Array, cows_Arr);
+        cows_Arr = checkCows(actual_Array, guess_Array, cows_Arr);
         bulls_Arr = [0, 0, 0, 0];
-        bulls = checkBulls(actual_Array, guess_Array, cows_Arr, bulls_Arr);
+        bulls_Arr = checkBulls(actual_Array, guess_Array, cows_Arr, bulls_Arr);
+        cows = count(cows_Arr);
+        bulls = count(bulls_Arr);
         print "Your guess generated " cows "cows and " bulls "bulls.";
         guess = getGuess();
         guess_Array = convertToArray(guess);
@@ -35,3 +37,5 @@ def convertToArray(num):
     return arr;
 
 def checkCows(actual, guess, cows):
+    num = 0;
+    for digit in actual
