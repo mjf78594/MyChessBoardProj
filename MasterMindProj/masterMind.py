@@ -17,14 +17,21 @@ def main():
     guess_Array = convertToArray(guess);
     turns = 1;
     while actual != getGuess:
-        cows = [0, 0, 0, 0];
-        cows = checkCows(actual_Array, guess_Array);
-        bulls = [0, 0, 0, 0];
-        bulls = checkBulls(actual_Array, guess_Array);
-        print "Your guess generated " "cows and " bulls "bulls.";
+        cows_Arr = [0, 0, 0, 0];
+        cows = checkCows(actual_Array, guess_Array, cows_Arr);
+        bulls_Arr = [0, 0, 0, 0];
+        bulls = checkBulls(actual_Array, guess_Array, cows_Arr, bulls_Arr);
+        print "Your guess generated " cows "cows and " bulls "bulls.";
         guess = getGuess();
         guess_Array = convertToArray(guess);
         turns = turns + 1;
     print "You guessed it! And it only too you " turns "!";
 
-def checkCows(actual, guess):
+def convertToArray(num):
+    convert = str(num);
+    arr = [];
+    for digit in num:
+        arr.append(int(digit));
+    return arr;
+
+def checkCows(actual, guess, cows):
