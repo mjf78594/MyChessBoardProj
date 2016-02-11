@@ -59,6 +59,7 @@ def checkBulls(actual, guess, cows):
     cow = countCows(cows);
     if cow + bulls > 4:
         bulls = bulls - cow;
+main();
 
 
 
