@@ -18,9 +18,8 @@ def main():
     turns = 1;
     while actual != getGuess:
         cows_Arr = checkCows(actual_Array, guess_Array);
-        bulls_Arr = checkBulls(actual_Array, guess_Array, cows_Arr);
+        bulls = checkBulls(actual_Array, guess_Array, cows_Arr);
         cows = count(cows_Arr);
-        bulls = count(bulls_Arr);
         print "Your guess generated " cows "cows and " bulls "bulls.";
         guess = getGuess();
         guess_Array = convertToArray(guess);
@@ -34,7 +33,7 @@ def convertToArray(num):
         arr.append(int(digit));
     return arr;
 
-def count(arr):
+def countCows(arr):
     i = 0;
     for binum in arr:
         if arr[binum] == 1:
@@ -43,19 +42,26 @@ def count(arr):
 
 def checkCows(actual, guess):
     cows = [];
-    for digit in actual:
+    for digit in range(len(actual)):
         if actual[digit] == guess[digit]:
-            cows[digit].append(1);
+            cows.append(1);
         else:
-            cows[digit].append(0);
+            cows.append(0);
     return cows;
 
 def checkBulls(actual, guess, cows):
-    bulls = [];
-    for digit in actual:
+    bulls = 0;
+    for digit in range(len(actual)):
         if cows[digit] == 1:
-            bulls[digit].append(0);
-        elif 
+            continue;
+        elif guess[digit] in actual:
+            bulls = bulls + 1;
+    cow = countCows(cows);
+    if cow + bulls > 4:
+        bulls = bulls - cow;
+
+
+
 
 
 
