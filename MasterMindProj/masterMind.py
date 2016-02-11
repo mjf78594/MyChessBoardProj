@@ -9,9 +9,13 @@ def getGuess():
     return guess;
 def main():
     actual = generateNum();
+    actual_Array = convertToArray(actual);
     guess = getGuess();
+    guess_Array = convertToArray(guess);
     while actual != getGuess:
         cows = checkCows(actual, guess);
         bulls = checkBulls(actual, guess);
         print "Your guess generated " "cows and " bulls "bulls.";
         guess = getGuess();
+        guess_Array = convertToArray(guess);
+def checkCows(actual, guess):
