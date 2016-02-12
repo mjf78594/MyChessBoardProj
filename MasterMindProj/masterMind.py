@@ -27,9 +27,16 @@ def main():
     print "You guessed it! And it only too you " + turns + "!"
 
 def convertToArray(num):
+    if len(str(num)) < 2:
+        arr = [0,0,0, num]
+        return arr
+    elif len(str(num)) < 3:
+        arr = [0,0]
+    elif len(str(num)) < 4:
+        arr = [0]
     convert = str(num)
     arr = []
-    for digit in convert:
+    for digit in list(convert):
         arr.append(digit)
     return arr
 
@@ -59,4 +66,5 @@ def checkBulls(actual, guess, cows):
     cow = countCows(cows)
     if cow + bulls > 4:
         bulls = bulls - cow
+    return bulls
 main()
