@@ -12,7 +12,7 @@ def getGuess():
     return guess
 
 def main():
-    actual = generateNum()
+    actual = 1122
     print str(actual)
     actual_Array = convertToArray(actual)
     guess = getGuess()
