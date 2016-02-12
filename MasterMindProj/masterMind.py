@@ -6,25 +6,27 @@ def generateNum():
 
 def getGuess():
     guess = -1
-    while guess < 0 and guess >= 10000:
+    while guess < 0 or guess >= 10000:
         guess = raw_input("Guess a number betweeen 0000 and 9999:")
+        guess = int(guess)
     return guess
 
 def main():
     actual = generateNum()
+    print str(actual)
     actual_Array = convertToArray(actual)
     guess = getGuess()
     guess_Array = convertToArray(guess)
     turns = 1
-    while actual != getGuess:
+    while actual != guess:
         cows_Arr = checkCows(actual_Array, guess_Array)
         bulls = checkBulls(actual_Array, guess_Array, cows_Arr)
         cows = countCows(cows_Arr)
-        print "Your guess generated " + cows + "cows and " + bulls + "bulls."
+        print "Your guess generated " + str(cows) + " cows and " + str(bulls) + " bulls."
         guess = getGuess()
         guess_Array = convertToArray(guess)
         turns = turns + 1;
-    print "You guessed it! And it only too you " + turns + "!"
+    print "You guessed it! And it only too you " + str(turns) + " guess!"
 
 def convertToArray(num):
     if len(str(num)) < 2:
