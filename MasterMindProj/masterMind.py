@@ -60,17 +60,3 @@ def checkBulls(actual, guess, cows):
     if cow + bulls > 4:
         bulls = bulls - cow
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-    for digit in actual
