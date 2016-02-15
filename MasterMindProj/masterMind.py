@@ -31,7 +31,7 @@ def main():
 
 def convertToArray(num):
     if len(str(num)) < 2:
-        arr = [0,0,0, num]
+        arr = [0,0,0]
         return arr
     elif len(str(num)) < 3:
         arr = [0,0]
@@ -52,7 +52,7 @@ def countCows(arr):
 
 def checkCows(actual, guess):
     cows = []
-    for digit in range(len(actual)):
+    for digit in range(4):
         if actual[digit] == guess[digit]:
             cows.append(1)
             actual[digit] = 'f'
