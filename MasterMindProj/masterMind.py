@@ -12,13 +12,14 @@ def getGuess():
     return guess
 
 def main():
-    actual = 1122
+    actual = generateNum()
     print str(actual)
     actual_Array = convertToArray(actual)
     guess = getGuess()
     guess_Array = convertToArray(guess)
     turns = 1
     while actual != guess:
+        actual_Array = convertToArray(actual)
         cows_Arr = checkCows(actual_Array, guess_Array)
         bulls = checkBulls(actual_Array, guess_Array, cows_Arr)
         cows = countCows(cows_Arr)
@@ -44,8 +45,8 @@ def convertToArray(num):
 
 def countCows(arr):
     i = 0
-    for binum in arr:
-        if arr[binum] == 1:
+    for num in range(4):
+        if arr[num] == 1:
             i = i + 1
     return i
 
@@ -54,6 +55,7 @@ def checkCows(actual, guess):
     for digit in range(len(actual)):
         if actual[digit] == guess[digit]:
             cows.append(1)
+            actual[digit] = 'f'
         else:
             cows.append(0)
     return cows
