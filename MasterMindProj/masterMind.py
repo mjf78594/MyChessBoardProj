@@ -31,11 +31,11 @@ def main():
 
 def convertToArray(num):
     if len(str(num)) < 2:
-        arr = [0,0,0]
+        arr = ['0','0','0']
     elif len(str(num)) < 3:
-        arr = [0,0]
+        arr = ['0','0']
     elif len(str(num)) < 4:
-        arr = [0]
+        arr = ['0']
     else:
         arr = []
     convert = str(num)
