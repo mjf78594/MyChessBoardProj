@@ -69,8 +69,5 @@ def checkBulls(actual, guess, cows):
             if guess[digit] in actual:
                     bulls = bulls + 1
                     actual[actual.index(guess[digit])] = 'f'
-    cow = countCows(cows)
-    if cow + bulls > 4:
-        bulls = bulls - cow
     return bulls
 main()
