@@ -32,13 +32,13 @@ def main():
 def convertToArray(num):
     if len(str(num)) < 2:
         arr = [0,0,0]
-        return arr
     elif len(str(num)) < 3:
         arr = [0,0]
     elif len(str(num)) < 4:
         arr = [0]
+    else:
+        arr = []
     convert = str(num)
-    arr = []
     for digit in list(convert):
         arr.append(digit)
     return arr
